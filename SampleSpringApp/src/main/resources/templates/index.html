@@ -1,0 +1,25 @@
+<html>
+<body>
+{{#name}}Hello, {{.}}!
+<div>
+    <a href="/todolist">View/Modify List</a>
+    {{#todolist}}
+    <a href="/newtodo">Add New Item</a>
+    {{/todolist}}
+    {{^todolist}}
+    Must view/modify before adding.
+    {{/todolist}}
+</div>
+<div>
+    <a href="/logout">Logout</a>
+</div>
+{{/name}}
+
+{{^name}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Enter your name" name="userName"/>
+    <button type="submit">Login</button>
+</form>
+{{/name}}
+</body>
+</html>
