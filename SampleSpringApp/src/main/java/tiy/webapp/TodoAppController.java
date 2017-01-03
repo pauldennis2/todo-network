@@ -11,8 +11,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -45,7 +43,7 @@ public class TodoAppController {
 
     @RequestMapping(path = "/todolist", method = RequestMethod.GET)
     public String todoList(HttpSession session, Model model) {
-        String userName = (String) session.getAttribute("userName");
+        //String userName = (String) session.getAttribute("userName");
 
         model.addAttribute("todo-list", todoList.getTodoList());
         return "todolist";
